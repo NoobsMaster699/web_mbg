@@ -1,0 +1,14 @@
+{
+  "name": "ucic/spk-mbg",
+  "description": "SPK MBG - Sistem Pendukung Keputusan Menu Makan Bergizi Gratis dengan AHP dan SAW.",
+  "type": "project",
+  "require": {
+    "php": ">=8.1"
+  },
+  "autoload": {
+    "files": [
+      "app/core/helpers.php"
+    ]
+  }
+}
+
