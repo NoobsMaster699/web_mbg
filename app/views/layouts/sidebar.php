@@ -1,21 +1,21 @@
 <?php
 $path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
 $items = [
-    '/dashboard' => ['Dashboard', '[ ]'],
-    '/kriteria' => ['Data Kriteria', '[K]'],
-    '/menu' => ['Data Menu', '[M]'],
-    '/penilaian' => ['Penilaian', '[P]'],
-    '/ahp' => ['Perbandingan AHP', '[A]'],
-    '/hasil' => ['Hasil Ranking SAW', '[S]'],
-    '/laporan' => ['Laporan', '[L]'],
-    '/riwayat' => ['Riwayat Aktivitas', '[R]'],
+    '/dashboard' => 'Dashboard',
+    '/kriteria' => 'Data Kriteria',
+    '/menu' => 'Data Menu',
+    '/penilaian' => 'Penilaian',
+    '/ahp' => 'Perbandingan AHP',
+    '/hasil' => 'Hasil Ranking SAW',
+    '/laporan' => 'Laporan',
+    '/riwayat' => 'Riwayat Aktivitas',
 ];
 ?>
 <aside class="sidebar">
     <a class="sidebar-logo" href="<?= url('dashboard') ?>"><img src="<?= asset('images/ui/logo-spk-mbg.svg') ?>" alt="SPK MBG"></a>
     <nav class="side-menu">
-        <?php foreach ($items as $href => [$label, $icon]): ?>
-            <a href="<?= e($href) ?>" class="<?= str_starts_with($path, $href) ? 'active' : '' ?>"><span><?= e($icon) ?></span><?= e($label) ?></a>
+        <?php foreach ($items as $href => $label): ?>
+            <a href="<?= e($href) ?>" class="<?= str_starts_with($path, $href) ? 'active' : '' ?>"><?= e($label) ?></a>
         <?php endforeach; ?>
     </nav>
     <div class="side-user">
