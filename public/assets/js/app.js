@@ -80,7 +80,7 @@
   link.classList.add('is-loading');
  }));
  const flash=document.getElementById('flash-message-json');
- if(flash){try{const data=JSON.parse(flash.textContent||'{}');showToast(data.type,data.title,data.message)}catch(e){}}
+ if(flash&&!document.querySelector('[data-alert]')){try{const data=JSON.parse(flash.textContent||'{}');showToast(data.type,data.title,data.message)}catch(e){}}
  document.addEventListener('submit',event=>{
   const form=event.target;
   if(!(form instanceof HTMLFormElement)) return;
